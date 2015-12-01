@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C047501C0D45B1008A29A3 /* Cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C0474D1C0D45A0008A29A3 /* Cozy.framework */; };
 		20E05AC21C0D3493007CC959 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC11C0D3493007CC959 /* main.m */; };
 		20E05AC51C0D3493007CC959 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC41C0D3493007CC959 /* AppDelegate.m */; };
 		20E05AC81C0D3493007CC959 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC71C0D3493007CC959 /* ViewController.m */; };
@@ -17,7 +18,25 @@
 		20E05ADB1C0D387C007CC959 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E05ADA1C0D387C007CC959 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		20C0474C1C0D45A0008A29A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20C0473B1C0D4490008A29A3;
+			remoteInfo = Cozy;
+		};
+		20C0474E1C0D45AC008A29A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 20C0473A1C0D4490008A29A3;
+			remoteInfo = Cozy;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cozy.xcodeproj; path = ../Cozy/Cozy.xcodeproj; sourceTree = "<group>"; };
 		20E05ABD1C0D3493007CC959 /* CozyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E05AC11C0D3493007CC959 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		20E05AC31C0D3493007CC959 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C047501C0D45B1008A29A3 /* Cozy.framework in Frameworks */,
 				20E05ADB1C0D387C007CC959 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20C047491C0D45A0008A29A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20C0474D1C0D45A0008A29A3 /* Cozy.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		20E05AB41C0D3493007CC959 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,7 @@
 		20E05ADC1C0D39EE007CC959 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */,
 				20E05ADA1C0D387C007CC959 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
@@ -111,6 +140,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				20C0474F1C0D45AC008A29A3 /* PBXTargetDependency */,
 			);
 			name = CozyApp;
 			productName = CozyApp;
@@ -142,12 +172,28 @@
 			mainGroup = 20E05AB41C0D3493007CC959;
 			productRefGroup = 20E05ABE1C0D3493007CC959 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 20C047491C0D45A0008A29A3 /* Products */;
+					ProjectRef = 20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				20E05ABC1C0D3493007CC959 /* CozyApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		20C0474D1C0D45A0008A29A3 /* Cozy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cozy.framework;
+			remoteRef = 20C0474C1C0D45A0008A29A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		20E05ABB1C0D3493007CC959 /* Resources */ = {
@@ -175,6 +221,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20C0474F1C0D45AC008A29A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cozy;
+			targetProxy = 20C0474E1C0D45AC008A29A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		20E05AC91C0D3493007CC959 /* Main.storyboard */ = {
@@ -281,7 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CozyApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kii.CozyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CozyApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kii.CozyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -319,6 +373,7 @@
 				20E05AD61C0D3493007CC959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
