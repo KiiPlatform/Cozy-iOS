@@ -1,5 +1,9 @@
 # Xcode
 #
+
+# Mac crap
+.DS_Store
+
 build/
 *.pbxuser
 !default.pbxuser

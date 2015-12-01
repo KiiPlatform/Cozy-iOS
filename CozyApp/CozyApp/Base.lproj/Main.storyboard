@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aSB-y1-Apz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wg-Gh-3c2">
+                                <rect key="frame" x="200" y="124" width="200" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="41B-eD-To5"/>
+                                    <constraint firstAttribute="height" constant="30" id="qR0-JQ-Wnk"/>
+                                </constraints>
+                                <state key="normal" title="Kii Cloud Login"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-W5-Eyn">
+                                <rect key="frame" x="200" y="194" width="200" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ILf-iE-1bx"/>
+                                    <constraint firstAttribute="height" constant="30" id="aaB-Ou-S67"/>
+                                </constraints>
+                                <state key="normal" title="Start Onboarding"/>
+                                <connections>
+                                    <segue destination="E8M-dk-wl9" kind="show" id="uKn-ci-PMq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ec-W5-Eyn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PRr-As-5z2"/>
+                            <constraint firstItem="8Wg-Gh-3c2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="fcH-Ou-xmf"/>
+                            <constraint firstItem="8Wg-Gh-3c2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s3m-IT-bgn"/>
+                            <constraint firstItem="6Ec-W5-Eyn" firstAttribute="top" secondItem="8Wg-Gh-3c2" secondAttribute="bottom" constant="40" id="sbc-WD-P8R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jao-bd-PLk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="1047"/>
+        </scene>
+        <!--Wifi Info-->
+        <scene sceneID="xrk-2F-kJX">
+            <objects>
+                <viewController title="Wifi Info" id="E8M-dk-wl9" customClass="CozyWifiInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AcT-WD-aAW"/>
+                        <viewControllerLayoutGuide type="bottom" id="z6x-TF-NAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bj0-Fa-1Yy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wifi SSID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1D-AE-NMj">
+                                <rect key="frame" x="20" y="104" width="75.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS2-Rw-Jgz">
+                                <rect key="frame" x="131.5" y="104" width="42" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h4-vg-P1i">
+                                <rect key="frame" x="496" y="99" width="84" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Change Wifi"/>
+                                <connections>
+                                    <action selector="clickOnChangeWifi:" destination="E8M-dk-wl9" eventType="touchUpInside" id="vvf-uO-xao"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-Y0-5Ri">
+                                <rect key="frame" x="20" y="144" width="78.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEt-9M-Lot">
+                                <rect key="frame" x="131.5" y="140" width="448.5" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-Ur-x7Y">
+                                <rect key="frame" x="531" y="179" width="51" height="31"/>
+                                <animations/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remeber the password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-Q1-4ZU">
+                                <rect key="frame" x="20" y="184" width="176.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wfk-Ur-x7Y" firstAttribute="centerY" secondItem="pCg-Q1-4ZU" secondAttribute="centerY" id="0Q7-HV-jn5"/>
+                            <constraint firstItem="pCg-Q1-4ZU" firstAttribute="leading" secondItem="Bj0-Fa-1Yy" secondAttribute="leading" constant="20" id="3Uu-ba-bzE"/>
+                            <constraint firstItem="H1D-AE-NMj" firstAttribute="leading" secondItem="Bj0-Fa-1Yy" secondAttribute="leading" constant="20" id="4KF-Ke-jUh"/>
+                            <constraint firstItem="PEt-9M-Lot" firstAttribute="leading" secondItem="aS2-Rw-Jgz" secondAttribute="leading" id="4e7-Kt-gzb"/>
+                            <constraint firstItem="rwl-Y0-5Ri" firstAttribute="top" secondItem="H1D-AE-NMj" secondAttribute="bottom" constant="20" id="4no-ZC-L25"/>
+                            <constraint firstItem="aS2-Rw-Jgz" firstAttribute="top" secondItem="H1D-AE-NMj" secondAttribute="top" id="AAB-HW-Jmc"/>
+                            <constraint firstItem="H1D-AE-NMj" firstAttribute="top" secondItem="AcT-WD-aAW" secondAttribute="bottom" constant="40" id="FTa-cV-dqN"/>
+                            <constraint firstItem="1h4-vg-P1i" firstAttribute="centerY" secondItem="H1D-AE-NMj" secondAttribute="centerY" id="HaV-BO-MUC"/>
+                            <constraint firstItem="PEt-9M-Lot" firstAttribute="centerY" secondItem="rwl-Y0-5Ri" secondAttribute="centerY" id="N1W-Jq-gt2"/>
+                            <constraint firstItem="rwl-Y0-5Ri" firstAttribute="leading" secondItem="H1D-AE-NMj" secondAttribute="leading" id="PPB-Js-hJn"/>
+                            <constraint firstItem="aS2-Rw-Jgz" firstAttribute="leading" secondItem="H1D-AE-NMj" secondAttribute="trailing" constant="36" id="SJn-v6-Jz9"/>
+                            <constraint firstAttribute="trailing" secondItem="Wfk-Ur-x7Y" secondAttribute="trailing" constant="20" id="TxV-J2-AkS"/>
+                            <constraint firstAttribute="trailing" secondItem="1h4-vg-P1i" secondAttribute="trailing" constant="20" id="WOa-JW-ZRK"/>
+                            <constraint firstItem="pCg-Q1-4ZU" firstAttribute="top" secondItem="rwl-Y0-5Ri" secondAttribute="bottom" constant="20" id="pgp-MD-kNh"/>
+                            <constraint firstAttribute="trailing" secondItem="PEt-9M-Lot" secondAttribute="trailing" constant="20" id="y77-2I-WXW"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="qDT-j9-anY">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Qos-6Y-TPk"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="changeWifiButton" destination="1h4-vg-P1i" id="lCP-aG-SGj"/>
+                        <outlet property="passwordField" destination="PEt-9M-Lot" id="bji-Oa-9c0"/>
+                        <outlet property="storePasswordSwitch" destination="Wfk-Ur-x7Y" id="uNR-dF-cEH"/>
+                        <outlet property="wifiNameLabel" destination="aS2-Rw-Jgz" id="r5A-Bb-5Cp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AvR-bb-evn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="1047"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zJG-tQ-wW7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aSB-y1-Apz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qPj-hG-U75">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t8H-IU-246"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Oh-dt-IL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="1047"/>
+        </scene>
+    </scenes>
+</document>
