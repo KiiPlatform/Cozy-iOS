@@ -24,7 +24,10 @@
                                     <constraint firstAttribute="width" constant="200" id="41B-eD-To5"/>
                                     <constraint firstAttribute="height" constant="30" id="qR0-JQ-Wnk"/>
                                 </constraints>
-                                <state key="normal" title="Kii Cloud Login"/>
+                                <state key="normal" title="Start Onboarding"/>
+                                <connections>
+                                    <segue destination="E8M-dk-wl9" kind="show" id="VKu-jD-QAs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-W5-Eyn">
                                 <rect key="frame" x="200" y="194" width="200" height="30"/>
@@ -33,7 +36,7 @@
                                     <constraint firstAttribute="width" constant="200" id="ILf-iE-1bx"/>
                                     <constraint firstAttribute="height" constant="30" id="aaB-Ou-S67"/>
                                 </constraints>
-                                <state key="normal" title="Start Onboarding"/>
+                                <state key="normal" title="Start Kii Onboarding"/>
                                 <connections>
                                     <segue destination="E8M-dk-wl9" kind="show" id="uKn-ci-PMq"/>
                                 </connections>
@@ -134,7 +137,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="qDT-j9-anY">
+                    <navigationItem key="navigationItem" title="Wifi Info" id="qDT-j9-anY">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Qos-6Y-TPk">
                             <connections>
                                 <action selector="clickOnNext:" destination="E8M-dk-wl9" id="6e0-Gx-Mg2"/>
@@ -147,11 +150,43 @@
                         <outlet property="passwordField" destination="PEt-9M-Lot" id="bji-Oa-9c0"/>
                         <outlet property="storePasswordSwitch" destination="Wfk-Ur-x7Y" id="uNR-dF-cEH"/>
                         <outlet property="wifiNameLabel" destination="aS2-Rw-Jgz" id="r5A-Bb-5Cp"/>
+                        <segue destination="UKi-SP-LC1" kind="show" identifier="scanBLE" id="cXS-VE-1lW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvR-bb-evn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1730" y="1047"/>
+        </scene>
+        <!--Cozy Devices View Controller-->
+        <scene sceneID="9IG-Qa-Zgy">
+            <objects>
+                <tableViewController id="UKi-SP-LC1" customClass="CozyDevicesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IAU-4f-Aki">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yq3-pT-2tO">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yq3-pT-2tO" id="iha-4k-WpF">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UKi-SP-LC1" id="toc-j1-9mL"/>
+                            <outlet property="delegate" destination="UKi-SP-LC1" id="j27-QQ-V2O"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEF-tE-BRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="1047"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zJG-tQ-wW7">
@@ -173,4 +208,7 @@
             <point key="canvasLocation" x="292" y="1047"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uKn-ci-PMq"/>
+    </inferredMetricsTieBreakers>
 </document>

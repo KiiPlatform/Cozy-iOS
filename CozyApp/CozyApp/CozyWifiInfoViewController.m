@@ -95,7 +95,7 @@
         [defaults setObject:self.passwordField.text forKey:self.currentSSIDInfo[@"BSSID"]];
         [defaults synchronize];
     }
-    
+    [self performSegueWithIdentifier:@"scanBLE" sender:nil];
 }
 
 /*

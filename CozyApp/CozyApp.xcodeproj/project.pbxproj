@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		202C98801C0D523F00E83D3A /* Cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C0474D1C0D45A0008A29A3 /* Cozy.framework */; };
 		202C98811C0D523F00E83D3A /* Cozy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20C0474D1C0D45A0008A29A3 /* Cozy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		202C988B1C0D564F00E83D3A /* CozyDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202C988A1C0D564F00E83D3A /* CozyDevicesViewController.m */; };
 		20E05AC21C0D3493007CC959 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC11C0D3493007CC959 /* main.m */; };
 		20E05AC51C0D3493007CC959 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC41C0D3493007CC959 /* AppDelegate.m */; };
 		20E05AC81C0D3493007CC959 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC71C0D3493007CC959 /* ViewController.m */; };
@@ -58,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		202C98891C0D564F00E83D3A /* CozyDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CozyDevicesViewController.h; sourceTree = "<group>"; };
+		202C988A1C0D564F00E83D3A /* CozyDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CozyDevicesViewController.m; sourceTree = "<group>"; };
 		20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cozy.xcodeproj; path = ../Cozy/Cozy.xcodeproj; sourceTree = "<group>"; };
 		20E05ABD1C0D3493007CC959 /* CozyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E05AC11C0D3493007CC959 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				20E05AC71C0D3493007CC959 /* ViewController.m */,
 				20E05AD71C0D351D007CC959 /* CozyWifiInfoViewController.h */,
 				20E05AD81C0D351D007CC959 /* CozyWifiInfoViewController.m */,
+				202C98891C0D564F00E83D3A /* CozyDevicesViewController.h */,
+				202C988A1C0D564F00E83D3A /* CozyDevicesViewController.m */,
 				20E05AC91C0D3493007CC959 /* Main.storyboard */,
 				20E05ACC1C0D3493007CC959 /* Assets.xcassets */,
 				20E05ACE1C0D3493007CC959 /* LaunchScreen.storyboard */,
@@ -241,6 +246,7 @@
 				20E05AC51C0D3493007CC959 /* AppDelegate.m in Sources */,
 				20E05AD91C0D351D007CC959 /* CozyWifiInfoViewController.m in Sources */,
 				20E05AC21C0D3493007CC959 /* main.m in Sources */,
+				202C988B1C0D564F00E83D3A /* CozyDevicesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
