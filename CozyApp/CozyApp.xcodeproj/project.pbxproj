@@ -12,6 +12,7 @@
 		202C988B1C0D564F00E83D3A /* CozyDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202C988A1C0D564F00E83D3A /* CozyDevicesViewController.m */; };
 		2080515C1C0D7E3600F0B58F /* libCozyObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 208051571C0D7E1D00F0B58F /* libCozyObjC.a */; };
 		2080515F1C0D800100F0B58F /* CozyDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2080515E1C0D800100F0B58F /* CozyDeviceCell.m */; };
+		208051611C0D8D6A00F0B58F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208051601C0D8D6A00F0B58F /* CoreBluetooth.framework */; };
 		20E05AC21C0D3493007CC959 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC11C0D3493007CC959 /* main.m */; };
 		20E05AC51C0D3493007CC959 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC41C0D3493007CC959 /* AppDelegate.m */; };
 		20E05AC81C0D3493007CC959 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC71C0D3493007CC959 /* ViewController.m */; };
@@ -80,6 +81,7 @@
 		208051511C0D7E1D00F0B58F /* CozyObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CozyObjC.xcodeproj; path = ../CozyObjC/CozyObjC.xcodeproj; sourceTree = "<group>"; };
 		2080515D1C0D800100F0B58F /* CozyDeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CozyDeviceCell.h; sourceTree = "<group>"; };
 		2080515E1C0D800100F0B58F /* CozyDeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CozyDeviceCell.m; sourceTree = "<group>"; };
+		208051601C0D8D6A00F0B58F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cozy.xcodeproj; path = ../Cozy/Cozy.xcodeproj; sourceTree = "<group>"; };
 		20E05ABD1C0D3493007CC959 /* CozyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E05AC11C0D3493007CC959 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208051611C0D8D6A00F0B58F /* CoreBluetooth.framework in Frameworks */,
 				2080515C1C0D7E3600F0B58F /* libCozyObjC.a in Frameworks */,
 				20E05ADB1C0D387C007CC959 /* SystemConfiguration.framework in Frameworks */,
 				202C98801C0D523F00E83D3A /* Cozy.framework in Frameworks */,
@@ -129,6 +132,7 @@
 		20E05AB41C0D3493007CC959 = {
 			isa = PBXGroup;
 			children = (
+				208051601C0D8D6A00F0B58F /* CoreBluetooth.framework */,
 				20E05ABF1C0D3493007CC959 /* CozyApp */,
 				20E05ABE1C0D3493007CC959 /* Products */,
 			);

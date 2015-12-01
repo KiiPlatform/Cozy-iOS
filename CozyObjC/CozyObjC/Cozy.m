@@ -8,6 +8,38 @@
 
 #import "Cozy.h"
 
+@implementation CozyDevice
+
+
+@end
+
+@interface Cozy()
+
+@property (nonatomic, strong) CBCentralManager *central;
+
+
+@end
+
 @implementation Cozy
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.central = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    }
+    return self;
+}
+
+- (void)scanForCozyDevices
+{
+    [self.central scanForPeripheralsWithServices:@[COZY_CONFIG_SERVICE_UUID] options:nil];
+}
+
+- (void)connectTo:(CozyDevice *)device
+{
+    
+}
+
 
 @end
