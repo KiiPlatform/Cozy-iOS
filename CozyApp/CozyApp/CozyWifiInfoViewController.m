@@ -59,14 +59,17 @@
     self.currentSSIDInfo = [self fetchSSIDInfo];
     if (self.currentSSIDInfo) {
         [self.wifiNameLabel setText:self.currentSSIDInfo[@"SSID"]];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *wifiPassword = [defaults objectForKey:self.currentSSIDInfo[@"BSSID"]];
+        [self.passwordField setText:wifiPassword];
     } else {
         [self.wifiNameLabel setText:nil];
+        [self.passwordField setText:nil];
     }
 }
 
 - (id)fetchSSIDInfo {
     NSArray *ifs = (__bridge_transfer NSArray *)CNCopySupportedInterfaces();
-    NSLog(@"Supported interfaces: %@", ifs);
     NSDictionary *info;
     for (NSString *ifnam in ifs) {
         info = (__bridge_transfer NSDictionary *)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
@@ -82,6 +85,18 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=WIFI"]];
 }
 
+- (IBAction)clickOnNext:(id)sender {
+    if (!self.currentSSIDInfo) {
+        [[[UIAlertView alloc] initWithTitle:@"Prompt" message:@"Please check your wifi connection first" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        return;
+    }
+    if ([self.storePasswordSwitch isOn]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.passwordField.text forKey:self.currentSSIDInfo[@"BSSID"]];
+        [defaults synchronize];
+    }
+    
+}
 
 /*
 #pragma mark - Navigation

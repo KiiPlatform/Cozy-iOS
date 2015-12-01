@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20C047501C0D45B1008A29A3 /* Cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C0474D1C0D45A0008A29A3 /* Cozy.framework */; };
 		20E05AC21C0D3493007CC959 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC11C0D3493007CC959 /* main.m */; };
 		20E05AC51C0D3493007CC959 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC41C0D3493007CC959 /* AppDelegate.m */; };
 		20E05AC81C0D3493007CC959 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AC71C0D3493007CC959 /* ViewController.m */; };
@@ -57,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C047501C0D45B1008A29A3 /* Cozy.framework in Frameworks */,
 				20E05ADB1C0D387C007CC959 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
