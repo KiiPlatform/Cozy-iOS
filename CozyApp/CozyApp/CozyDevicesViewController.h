@@ -10,4 +10,9 @@
 
 @interface CozyDevicesViewController : UITableViewController
 
+@property (nonatomic, strong) NSString *SSID;
+@property (nonatomic, strong) NSString *BSSID;
+@property (nonatomic, strong) NSString *password;
+
+
 @end

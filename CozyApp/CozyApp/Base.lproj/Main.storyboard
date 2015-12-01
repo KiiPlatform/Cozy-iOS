@@ -167,15 +167,50 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yq3-pT-2tO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yq3-pT-2tO" customClass="CozyDeviceCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yq3-pT-2tO" id="iha-4k-WpF">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPr-VQ-ZDr">
+                                            <rect key="frame" x="16" y="11.5" width="42" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b31-f8-hAx">
+                                            <rect key="frame" x="564" y="12" width="20" height="20"/>
+                                            <animations/>
+                                        </activityIndicatorView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXX-M4-vwG">
+                                            <rect key="frame" x="564" y="12" width="20" height="20"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="7NE-dl-zWM"/>
+                                                <constraint firstAttribute="height" constant="20" id="fp1-Cw-Afd"/>
+                                            </constraints>
+                                            <state key="normal" image="plus"/>
+                                        </button>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="QXX-M4-vwG" secondAttribute="trailing" constant="16" id="4fN-rz-aQa"/>
+                                        <constraint firstAttribute="trailing" secondItem="b31-f8-hAx" secondAttribute="trailing" constant="16" id="A18-Pe-w5e"/>
+                                        <constraint firstItem="wPr-VQ-ZDr" firstAttribute="leading" secondItem="iha-4k-WpF" secondAttribute="leading" constant="16" id="Irj-gU-FSJ"/>
+                                        <constraint firstItem="b31-f8-hAx" firstAttribute="centerY" secondItem="iha-4k-WpF" secondAttribute="centerY" id="JBW-Ne-3VH"/>
+                                        <constraint firstItem="wPr-VQ-ZDr" firstAttribute="centerY" secondItem="iha-4k-WpF" secondAttribute="centerY" id="baU-6M-t1V"/>
+                                        <constraint firstItem="QXX-M4-vwG" firstAttribute="centerY" secondItem="iha-4k-WpF" secondAttribute="centerY" id="q4Z-oK-7Aj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="connectButton" destination="QXX-M4-vwG" id="wMK-MK-eAn"/>
+                                    <outlet property="deviceNameLabel" destination="wPr-VQ-ZDr" id="RBn-aV-PaM"/>
+                                    <outlet property="progressView" destination="b31-f8-hAx" id="Acm-hJ-6rb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -208,6 +243,9 @@
             <point key="canvasLocation" x="292" y="1047"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" width="20" height="20"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uKn-ci-PMq"/>
     </inferredMetricsTieBreakers>
