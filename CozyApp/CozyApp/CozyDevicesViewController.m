@@ -55,12 +55,14 @@
 
 - (void)didConnectToDevice:(CozyDevice *)device result:(NSDictionary *)payload
 {
-    
+    [self.connectingDevices removeObject:device];
+    [self.connectedDevices addObject:device];
+    [self.tableView reloadData];
 }
 
 - (void)connectFailed:(CozyDevice *)device error:(NSError *)error
 {
-    
+    [self.connectingDevices removeObject:device];
 }
 
 #pragma mark - Table view data source

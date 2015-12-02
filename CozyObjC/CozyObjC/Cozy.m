@@ -157,6 +157,7 @@
     {
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:COZY_CONFIG_CHARACTERISTIC_UUID]]) {
             NSLog(@"didDiscoverCharacteristicsForService:%@",characteristic);
+            [peripheral readValueForCharacteristic:characteristic];
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
             NSDictionary *dict = @{@"SSID":self.SSID,
                                    @"BSSID":self.BSSID?self.BSSID:@"",
@@ -170,6 +171,18 @@
     }
 }
 
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
+    
+    if (error) {
+        NSLog(@"Error changing notification state: %@", error.localizedDescription);
+    }
+    
+    // Notification has started
+    if (characteristic.isNotifying) {
+        NSLog(@"Notification began on %@", characteristic);
+    }
+}
+
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     if (error)
@@ -180,6 +193,9 @@
             [self.delegate connectFailed:device error:error];
         return;
     }
+    
+    NSString *str = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+    NSLog(@"Got %@",str);
     
     NSError *jsonError;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:characteristic.value
