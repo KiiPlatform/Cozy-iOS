@@ -9,23 +9,21 @@
 #import <Foundation/Foundation.h>
 @import CoreBluetooth;
 
-#define COZY_STATUS_NONE              0
-#define COZY_STATUS_CONNECTING        1
-#define COZY_STATUS_CONNECTED         2
-#define COZY_STATUS_CONNECT_FAILED    3
 
 #define COZY_CONFIG_SERVICE_UUID        @"E20A39F4-73F5-4BC4-A12F-17D1AD666661"
 #define COZY_CONFIG_CHARACTERISTIC_UUID @"08590F7E-DB05-467E-8757-72F6F66666D4"
 
-@interface CozyDevice : CBPeripheral
+@interface CozyDevice : NSObject
 
-@property (nonatomic) int status;
+@property (nonatomic, strong)    CBPeripheral *peripheral;
+@property (nonatomic, readonly)  NSString     *name;
+@property (nonatomic, readonly)  NSString     *UUID;
 
 @end
 
 @protocol CozyDelegate <NSObject>
 
-- (void)didDiscoverDevice:(NSString*)name;
+- (void)didDiscoverDevice:(CozyDevice*)device;
 
 - (void)didConnectToDevice:(CozyDevice*)device result:(NSString*)payload;
 

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CozyObjC/Cozy.h"
 
 @interface CozyDeviceCell : UITableViewCell
+
+@property (weak, nonatomic) CozyDevice  *device;
 
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressView;

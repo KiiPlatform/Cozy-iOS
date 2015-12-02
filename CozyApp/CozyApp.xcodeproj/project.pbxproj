@@ -78,6 +78,7 @@
 /* Begin PBXFileReference section */
 		202C98891C0D564F00E83D3A /* CozyDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CozyDevicesViewController.h; sourceTree = "<group>"; };
 		202C988A1C0D564F00E83D3A /* CozyDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CozyDevicesViewController.m; sourceTree = "<group>"; };
+		204D12B31C0E7B960061F306 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		208051511C0D7E1D00F0B58F /* CozyObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CozyObjC.xcodeproj; path = ../CozyObjC/CozyObjC.xcodeproj; sourceTree = "<group>"; };
 		2080515D1C0D800100F0B58F /* CozyDeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CozyDeviceCell.h; sourceTree = "<group>"; };
 		2080515E1C0D800100F0B58F /* CozyDeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CozyDeviceCell.m; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 			children = (
 				20E05AC31C0D3493007CC959 /* AppDelegate.h */,
 				20E05AC41C0D3493007CC959 /* AppDelegate.m */,
+				204D12B31C0E7B960061F306 /* Constants.h */,
 				20E05AC61C0D3493007CC959 /* ViewController.h */,
 				20E05AC71C0D3493007CC959 /* ViewController.m */,
 				20E05AD71C0D351D007CC959 /* CozyWifiInfoViewController.h */,
