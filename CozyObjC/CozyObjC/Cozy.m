@@ -12,7 +12,9 @@
 
 - (NSString*)name
 {
-    return self.peripheral.name;
+    if (self.peripheral.name)
+        return self.peripheral.name;
+    return self.UUID;
 }
 
 - (NSString*)UUID
@@ -31,10 +33,11 @@
 
 @end
 
-@interface Cozy() <CBCentralManagerDelegate>
+@interface Cozy() <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property (nonatomic, strong) CBCentralManager *central;
-
+@property (nonatomic)   BOOL scanning;
+@property (nonatomic, strong) NSMutableDictionary *deviceMap;
 
 @end
 
@@ -45,31 +48,138 @@
     self = [super init];
     if (self) {
         self.central = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+        self.deviceMap = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
-
+- (instancetype)initWithSSID:(NSString*)SSID BSSID:(NSString*)BSSID andPassword:(NSString*)password
+{
+    self = [self init];
+    self.SSID = SSID;
+    self.BSSID = BSSID;
+    self.password = password;
+    return self;
+}
 
 - (void)scanForCozyDevices
 {
-    [self.central scanForPeripheralsWithServices:@[COZY_CONFIG_SERVICE_UUID] options:nil];
+    self.scanning = YES;
+    [self.central scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:COZY_CONFIG_SERVICE_UUID]] options:nil];
+}
+
+- (void)stopScan
+{
+    [self.central stopScan];
 }
 
 - (void)connectTo:(CozyDevice *)device
 {
-    
+    [self.deviceMap setObject:device forKey:device.peripheral.identifier];
+    [self.central connectPeripheral:device.peripheral options:nil];
 }
 
 -(void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
-    
+    if (central.state == CBCentralManagerStatePoweredOn
+        && self.scanning) {
+        [self scanForCozyDevices];
+    }
 }
 
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(nonnull CBPeripheral *)peripheral advertisementData:(nonnull NSDictionary<NSString *,id> *)advertisementData RSSI:(nonnull NSNumber *)RSSI
 {
     
+    for (CBService *service in peripheral.services)
+    {
+        if ([service.UUID isEqual:[CBUUID UUIDWithString:COZY_CONFIG_SERVICE_UUID]])
+        {
+            NSLog(@"Service found with UUID: %@", service.UUID);
+            [peripheral discoverCharacteristics:nil forService:service];
+            break;
+        }
+    }
+    
+    if (self.delegate) {
+        CozyDevice *device = [CozyDevice new];
+        device.peripheral = peripheral;
+        [self.delegate didDiscoverDevice:device];
+    }
 }
 
+- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
+{
+    
+    NSLog(@"Did connect to peripheral: %@", peripheral);
+    peripheral.delegate = self;
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:COZY_CONFIG_SERVICE_UUID]]];
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
+{
+    NSLog(@"didDiscoverServices");
+    
+    if (error)
+    {
+        NSLog(@"Discovered services for %@ with error: %@", peripheral.name, [error localizedDescription]);
+        CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
+        [self.delegate connectFailed:device error:error];
+        return;
+    }
+    
+    
+    for (CBService *service in peripheral.services)
+    {
+        if ([service.UUID isEqual:[CBUUID UUIDWithString:COZY_CONFIG_SERVICE_UUID]])
+        {
+            NSLog(@"Service found with UUID: %@", service.UUID);
+            [peripheral discoverCharacteristics:nil forService:service];
+            break;
+        }
+    }
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
+{
+    
+    if (error)
+    {
+        NSLog(@"Discovered characteristics for %@ with error: %@", service.UUID, [error localizedDescription]);
+        
+        CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
+        [self.delegate connectFailed:device error:error];
+        return;
+    }
+    
+    for (CBCharacteristic *characteristic in service.characteristics)
+    {
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:COZY_CONFIG_CHARACTERISTIC_UUID]]) {
+            NSLog(@"didDiscoverCharacteristicsForService:%@",characteristic);
+            [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            NSDictionary *dict = @{@"SSID":self.SSID,
+                                   @"BSSID":self.BSSID?self.BSSID:@"",
+                                   @"password":self.password};
+            NSError *error;
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                               options:0
+                                                                 error:&error];
+            [peripheral writeValue:jsonData forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
+        }
+    }
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
+{
+    if (error)
+    {
+        NSLog(@"Error updating value for characteristic %@ error: %@", characteristic.UUID, [error localizedDescription]);
+        CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
+        [self.delegate connectFailed:device error:error];
+        return;
+    }
+    
+    NSLog(@"Received：%@",characteristic.value);
+
+}
 
 @end

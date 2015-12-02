@@ -175,7 +175,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPr-VQ-ZDr">
-                                            <rect key="frame" x="16" y="11.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="16" y="11.5" width="532" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -185,14 +185,14 @@
                                             <rect key="frame" x="564" y="12" width="20" height="20"/>
                                             <animations/>
                                         </activityIndicatorView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXX-M4-vwG">
+                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXX-M4-vwG">
                                             <rect key="frame" x="564" y="12" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="7NE-dl-zWM"/>
                                                 <constraint firstAttribute="height" constant="20" id="fp1-Cw-Afd"/>
                                             </constraints>
-                                            <state key="normal" image="plus"/>
+                                            <state key="normal" backgroundImage="plus"/>
                                         </button>
                                     </subviews>
                                     <animations/>
@@ -202,6 +202,7 @@
                                         <constraint firstItem="wPr-VQ-ZDr" firstAttribute="leading" secondItem="iha-4k-WpF" secondAttribute="leading" constant="16" id="Irj-gU-FSJ"/>
                                         <constraint firstItem="b31-f8-hAx" firstAttribute="centerY" secondItem="iha-4k-WpF" secondAttribute="centerY" id="JBW-Ne-3VH"/>
                                         <constraint firstItem="wPr-VQ-ZDr" firstAttribute="centerY" secondItem="iha-4k-WpF" secondAttribute="centerY" id="baU-6M-t1V"/>
+                                        <constraint firstItem="QXX-M4-vwG" firstAttribute="leading" secondItem="wPr-VQ-ZDr" secondAttribute="trailing" constant="16" id="fHp-7Z-QJS"/>
                                         <constraint firstItem="QXX-M4-vwG" firstAttribute="centerY" secondItem="iha-4k-WpF" secondAttribute="centerY" id="q4Z-oK-7Aj"/>
                                     </constraints>
                                 </tableViewCellContentView>

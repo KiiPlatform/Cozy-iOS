@@ -133,7 +133,6 @@
 		20E05AB41C0D3493007CC959 = {
 			isa = PBXGroup;
 			children = (
-				208051601C0D8D6A00F0B58F /* CoreBluetooth.framework */,
 				20E05ABF1C0D3493007CC959 /* CozyApp */,
 				20E05ABE1C0D3493007CC959 /* Products */,
 			);
@@ -185,6 +184,7 @@
 				208051511C0D7E1D00F0B58F /* CozyObjC.xcodeproj */,
 				20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */,
 				20E05ADA1C0D387C007CC959 /* SystemConfiguration.framework */,
+				208051601C0D8D6A00F0B58F /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
 			path = ..;

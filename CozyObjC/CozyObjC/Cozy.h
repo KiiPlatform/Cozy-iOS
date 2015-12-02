@@ -39,7 +39,9 @@
 @property (nonatomic, strong) NSString *BSSID;
 @property (nonatomic, strong) NSString *password;
 
+- (instancetype)initWithSSID:(NSString*)SSID BSSID:(NSString*)BSSID andPassword:(NSString*)password;
 - (void)scanForCozyDevices;
+- (void)stopScan;
 - (void)connectTo:(CozyDevice*)device;
 
 @end

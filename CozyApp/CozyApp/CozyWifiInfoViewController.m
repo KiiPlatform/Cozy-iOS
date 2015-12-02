@@ -7,6 +7,7 @@
 //
 
 #import "CozyWifiInfoViewController.h"
+#import "CozyDevicesViewController.h"
 @import SystemConfiguration.CaptiveNetwork;
 
 @interface CozyWifiInfoViewController ()
@@ -26,6 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.passwordField becomeFirstResponder];
+    [self setTitle:@"Wifi Info"];
     
     if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"prefs:root=WIFI"]]) {
         [self.changeWifiButton setHidden:YES];
@@ -98,14 +100,18 @@
     [self performSegueWithIdentifier:@"scanBLE" sender:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"scanBLE"]) {
+        CozyDevicesViewController *vc = segue.destinationViewController;
+        vc.SSID = self.currentSSIDInfo[@"SSID"];
+        vc.BSSID = self.currentSSIDInfo[@"BSSID"];
+        vc.password = self.passwordField.text;
+    }
 }
-*/
+
 
 @end
