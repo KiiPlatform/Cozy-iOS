@@ -53,7 +53,7 @@
     [self.tableView reloadData];
 }
 
-- (void)didConnectToDevice:(CozyDevice *)device result:(NSString *)payload
+- (void)didConnectToDevice:(CozyDevice *)device result:(NSDictionary *)payload
 {
     
 }

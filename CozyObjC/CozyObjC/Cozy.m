@@ -100,7 +100,7 @@
         }
     }
     
-    if (self.delegate) {
+    if ([self.delegate respondsToSelector:@selector(didDiscoverDevice:)]) {
         CozyDevice *device = [CozyDevice new];
         device.peripheral = peripheral;
         [self.delegate didDiscoverDevice:device];
@@ -123,7 +123,8 @@
     {
         NSLog(@"Discovered services for %@ with error: %@", peripheral.name, [error localizedDescription]);
         CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
-        [self.delegate connectFailed:device error:error];
+        if ([self.delegate respondsToSelector:@selector(connectFailed:error:)])
+            [self.delegate connectFailed:device error:error];
         return;
     }
     
@@ -147,7 +148,8 @@
         NSLog(@"Discovered characteristics for %@ with error: %@", service.UUID, [error localizedDescription]);
         
         CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
-        [self.delegate connectFailed:device error:error];
+        if ([self.delegate respondsToSelector:@selector(connectFailed:error:)])
+            [self.delegate connectFailed:device error:error];
         return;
     }
     
@@ -159,10 +161,10 @@
             NSDictionary *dict = @{@"SSID":self.SSID,
                                    @"BSSID":self.BSSID?self.BSSID:@"",
                                    @"password":self.password};
-            NSError *error;
+            NSError *jsonError;
             NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
                                                                options:0
-                                                                 error:&error];
+                                                                 error:&jsonError];
             [peripheral writeValue:jsonData forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
         }
     }
@@ -174,12 +176,25 @@
     {
         NSLog(@"Error updating value for characteristic %@ error: %@", characteristic.UUID, [error localizedDescription]);
         CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
-        [self.delegate connectFailed:device error:error];
+        if ([self.delegate respondsToSelector:@selector(connectFailed:error:)])
+            [self.delegate connectFailed:device error:error];
         return;
     }
     
-    NSLog(@"Received：%@",characteristic.value);
-
+    NSError *jsonError;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:characteristic.value
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&jsonError];
+    NSLog(@"Received：%@",json);
+    CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
+    if ([json[@"result"] boolValue]) {
+        if ([self.delegate respondsToSelector:@selector(didConnectToDevice:result:)])
+            [self.delegate didConnectToDevice:device result:json];
+    } else {
+        NSError *err = [NSError errorWithDomain:@"Cozy" code:1 userInfo:json];
+        if ([self.delegate respondsToSelector:@selector(connectFailed:error:)])
+            [self.delegate connectFailed:device error:err];
+    }
 }
 
 @end
