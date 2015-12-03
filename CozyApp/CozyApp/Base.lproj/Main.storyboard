@@ -29,7 +29,7 @@
                                     <segue destination="E8M-dk-wl9" kind="show" identifier="onboarding" id="VKu-jD-QAs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-W5-Eyn">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-W5-Eyn">
                                 <rect key="frame" x="200" y="194" width="200" height="30"/>
                                 <animations/>
                                 <constraints>

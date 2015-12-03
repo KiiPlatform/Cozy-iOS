@@ -70,6 +70,9 @@
 
 - (void)stopScan
 {
+    for (CozyDevice *device in self.deviceMap.allValues) {
+        [self.central cancelPeripheralConnection:device.peripheral];
+    }
     [self.central stopScan];
 }
 
@@ -197,19 +200,14 @@
     NSString *str = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
     NSLog(@"Got %@",str);
     
-    NSError *jsonError;
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:characteristic.value
-                                                         options:NSJSONReadingMutableContainers
-                                                           error:&jsonError];
-    NSLog(@"Received：%@",json);
     CozyDevice *device = [self.deviceMap objectForKey:peripheral.identifier];
-    if ([json[@"result"] boolValue]) {
-        if ([self.delegate respondsToSelector:@selector(didConnectToDevice:result:)])
-            [self.delegate didConnectToDevice:device result:json];
-    } else {
-        NSError *err = [NSError errorWithDomain:@"Cozy" code:1 userInfo:json];
+    if ([str length] ==0 || [str isEqualToString:@"-1"]) {
+        NSError *err = [NSError errorWithDomain:@"Cozy" code:-1 userInfo:nil];
         if ([self.delegate respondsToSelector:@selector(connectFailed:error:)])
             [self.delegate connectFailed:device error:err];
+    } else {
+        if ([self.delegate respondsToSelector:@selector(didConnectToDevice:result:)])
+            [self.delegate didConnectToDevice:device result:str];
     }
     [self.central cancelPeripheralConnection:peripheral];
 }

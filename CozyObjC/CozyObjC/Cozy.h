@@ -25,7 +25,7 @@
 
 - (void)didDiscoverDevice:(CozyDevice*)device;
 
-- (void)didConnectToDevice:(CozyDevice*)device result:(NSDictionary*)payload;
+- (void)didConnectToDevice:(CozyDevice*)device result:(NSString*)payload;
 
 - (void)connectFailed:(CozyDevice*)device error:(NSError*)error;
 
