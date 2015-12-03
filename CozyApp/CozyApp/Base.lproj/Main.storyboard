@@ -26,7 +26,7 @@
                                 </constraints>
                                 <state key="normal" title="Start Onboarding"/>
                                 <connections>
-                                    <segue destination="E8M-dk-wl9" kind="show" id="VKu-jD-QAs"/>
+                                    <segue destination="E8M-dk-wl9" kind="show" identifier="onboarding" id="VKu-jD-QAs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-W5-Eyn">
@@ -248,6 +248,6 @@
         <image name="plus" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uKn-ci-PMq"/>
+        <segue reference="VKu-jD-QAs"/>
     </inferredMetricsTieBreakers>
 </document>

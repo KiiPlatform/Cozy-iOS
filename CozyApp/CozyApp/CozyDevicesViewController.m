@@ -9,6 +9,8 @@
 #import "CozyDevicesViewController.h"
 #import "CozyObjC/Cozy.h"
 #import "CozyDeviceCell.h"
+#import "AppDelegate.h"
+@import ThingIFSDK;
 
 @interface CozyDevicesViewController () <CozyDelegate>
 
@@ -58,6 +60,11 @@
     [self.connectingDevices removeObject:device];
     [self.connectedDevices addObject:device];
     [self.tableView reloadData];
+    
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    if (delegate.kiiOnboard) {
+//        ThingIFAPI *thingIFAPI = [[ThingIFAPI alloc] init];
+    }
 }
 
 - (void)connectFailed:(CozyDevice *)device error:(NSError *)error

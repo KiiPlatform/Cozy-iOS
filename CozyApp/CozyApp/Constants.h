@@ -9,6 +9,8 @@
 #ifndef Constants_h
 #define Constants_h
 
+#define KII_APP_ID                    @"bd4e2f16"
+#define KII_APP_KEY                   @"9552bad8c832d7e4aacdb3fefb20201f"
 
 #define COZY_STATUS_NONE              0
 #define COZY_STATUS_CONNECTING        1

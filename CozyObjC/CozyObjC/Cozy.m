@@ -211,6 +211,7 @@
         if ([self.delegate respondsToSelector:@selector(connectFailed:error:)])
             [self.delegate connectFailed:device error:err];
     }
+    [self.central cancelPeripheralConnection:peripheral];
 }
 
 @end

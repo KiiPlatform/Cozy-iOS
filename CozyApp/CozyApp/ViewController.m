@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -25,5 +26,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    if ([segue.identifier isEqualToString:@"kii_onboarding"]) {
+        delegate.kiiOnboard = YES;
+    } else if ([segue.identifier isEqualToString:@"onboarding"]) {
+        delegate.kiiOnboard = NO;
+    }
+}
 
 @end
