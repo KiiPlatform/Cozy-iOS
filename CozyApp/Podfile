@@ -1,0 +1,5 @@
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'ThingIFSDK', '~> 0.8.0'
+pod 'KiiCloud'

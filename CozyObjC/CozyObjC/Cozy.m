@@ -157,7 +157,7 @@
     {
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:COZY_CONFIG_CHARACTERISTIC_UUID]]) {
             NSLog(@"didDiscoverCharacteristicsForService:%@",characteristic);
-            [peripheral readValueForCharacteristic:characteristic];
+//            [peripheral readValueForCharacteristic:characteristic];
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
             NSDictionary *dict = @{@"SSID":self.SSID,
                                    @"BSSID":self.BSSID?self.BSSID:@"",

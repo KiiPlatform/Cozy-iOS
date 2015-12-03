@@ -21,9 +21,17 @@
 		20E05AD01C0D3493007CC959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E05ACE1C0D3493007CC959 /* LaunchScreen.storyboard */; };
 		20E05AD91C0D351D007CC959 /* CozyWifiInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E05AD81C0D351D007CC959 /* CozyWifiInfoViewController.m */; };
 		20E05ADB1C0D387C007CC959 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E05ADA1C0D387C007CC959 /* SystemConfiguration.framework */; };
+		F52F786EB8538D725A631347 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5A6CB49A54B8EBC64AA4DE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		201DBF211C0FE68A00E2E4CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 201DBF1B1C0FE68A00E2E4CA /* CozyObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 208051391C0D7D0100F0B58F;
+			remoteInfo = CozyObjC;
+		};
 		202C98821C0D523F00E83D3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 20C047481C0D45A0008A29A3 /* Cozy.xcodeproj */;
@@ -76,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		201DBF1B1C0FE68A00E2E4CA /* CozyObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CozyObjC.xcodeproj; path = ../CozyObjC/CozyObjC.xcodeproj; sourceTree = "<group>"; };
 		202C98891C0D564F00E83D3A /* CozyDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CozyDevicesViewController.h; sourceTree = "<group>"; };
 		202C988A1C0D564F00E83D3A /* CozyDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CozyDevicesViewController.m; sourceTree = "<group>"; };
 		204D12B31C0E7B960061F306 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -97,6 +106,9 @@
 		20E05AD71C0D351D007CC959 /* CozyWifiInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CozyWifiInfoViewController.h; sourceTree = "<group>"; };
 		20E05AD81C0D351D007CC959 /* CozyWifiInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CozyWifiInfoViewController.m; sourceTree = "<group>"; };
 		20E05ADA1C0D387C007CC959 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		42ED2EFD9BE7E79ACE159EE0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5BF2E260EA7C57B6EC23BEF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9D5A6CB49A54B8EBC64AA4DE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +120,21 @@
 				2080515C1C0D7E3600F0B58F /* libCozyObjC.a in Frameworks */,
 				20E05ADB1C0D387C007CC959 /* SystemConfiguration.framework in Frameworks */,
 				202C98801C0D523F00E83D3A /* Cozy.framework in Frameworks */,
+				F52F786EB8538D725A631347 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201DBF1C1C0FE68A00E2E4CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				201DBF221C0FE68A00E2E4CA /* libCozyObjC.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		208051521C0D7E1D00F0B58F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +156,8 @@
 			children = (
 				20E05ABF1C0D3493007CC959 /* CozyApp */,
 				20E05ABE1C0D3493007CC959 /* Products */,
+				8ACC4C2EB4782BCC5EBC6F0E /* Pods */,
+				21D9622F583636717BC669FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +213,24 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		21D9622F583636717BC669FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				201DBF1B1C0FE68A00E2E4CA /* CozyObjC.xcodeproj */,
+				9D5A6CB49A54B8EBC64AA4DE /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8ACC4C2EB4782BCC5EBC6F0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42ED2EFD9BE7E79ACE159EE0 /* Pods.debug.xcconfig */,
+				5BF2E260EA7C57B6EC23BEF0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,10 +238,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20E05AD41C0D3493007CC959 /* Build configuration list for PBXNativeTarget "CozyApp" */;
 			buildPhases = (
+				CA75DC93C9F92AEA15C353B8 /* Check Pods Manifest.lock */,
 				20E05AB91C0D3493007CC959 /* Sources */,
 				20E05ABA1C0D3493007CC959 /* Frameworks */,
 				20E05ABB1C0D3493007CC959 /* Resources */,
 				202C98841C0D523F00E83D3A /* Embed Frameworks */,
+				81352BDEA919F92617EAB420 /* Embed Pods Frameworks */,
+				3936F47E0AD2391FE3559DEF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +292,10 @@
 					ProductGroup = 208051521C0D7E1D00F0B58F /* Products */;
 					ProjectRef = 208051511C0D7E1D00F0B58F /* CozyObjC.xcodeproj */;
 				},
+				{
+					ProductGroup = 201DBF1C1C0FE68A00E2E4CA /* Products */;
+					ProjectRef = 201DBF1B1C0FE68A00E2E4CA /* CozyObjC.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -257,6 +305,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		201DBF221C0FE68A00E2E4CA /* libCozyObjC.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCozyObjC.a;
+			remoteRef = 201DBF211C0FE68A00E2E4CA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		208051571C0D7E1D00F0B58F /* libCozyObjC.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -285,6 +340,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3936F47E0AD2391FE3559DEF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81352BDEA919F92617EAB420 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA75DC93C9F92AEA15C353B8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20E05AB91C0D3493007CC959 /* Sources */ = {
@@ -422,12 +525,12 @@
 		};
 		20E05AD51C0D3493007CC959 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42ED2EFD9BE7E79ACE159EE0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CozyApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kii.CozyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,12 +539,12 @@
 		};
 		20E05AD61C0D3493007CC959 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BF2E260EA7C57B6EC23BEF0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CozyApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kii.CozyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
